@@ -30,3 +30,25 @@ if(a[[i]]$name=="datasharing"){
 #find name of object in the list
 name(a[[5]])
 a[[5]]$created_at
+
+
+url="https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv" 
+download.file(url,"C:/Users/Lovebonito/Downloads/reading/getting clearn data/h.csv")
+acs=read.csv("C:/Users/Lovebonito/Downloads/reading/getting clearn data/h.csv")
+library(sqldf)
+sqldf("select pwgtp1 from acs")
+sqldf("select pwgtp1 from acs where AGEP < 50")
+sqldf("select * from acs where AGEP < 50 and pwgtp1")
+sqldf("select * from acs where AGEP < 50")
+
+unique(acs$AGEP)
+sqldf("select unique * from acs")
+sqldf("select unique AGEP from acs")
+sqldf("select AGEP where unique from acs")
+sqldf("select distinct AGEP from acs")
+
+
+con=url("http://biostat.jhsph.edu/~jleek/contact.html")
+html=readLines(con)
+close(con)
+nchar(html[c(10,20,30,100)])

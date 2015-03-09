@@ -1,2 +1,2 @@
-# getting-and-cleaning-data
-##coursera Project
+#Getting-and-cleaning-data
+##A coursera Project

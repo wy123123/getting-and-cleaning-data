@@ -47,8 +47,15 @@ sqldf("select unique AGEP from acs")
 sqldf("select AGEP where unique from acs")
 sqldf("select distinct AGEP from acs")
 
-
+#Q4
 con=url("http://biostat.jhsph.edu/~jleek/contact.html")
 html=readLines(con)
 close(con)
 nchar(html[c(10,20,30,100)])
+
+#Q5
+url="https://d396qusza40orc.cloudfront.net/getdata%2Fwksst8110.for"
+download.file(url,"C:/Users/Lovebonito/Downloads/reading/getting clearn data/h.fwf")
+dt=read.fwf("C:/Users/Lovebonito/Downloads/reading/getting clearn data/h.fwf",widths=c(12, 7,4, 9,4, 9,4, 9,4),skip=4)
+class(dt$V4)
+sum(dt$V4)

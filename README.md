@@ -17,4 +17,6 @@ e.g, if i unzip the file to c:\newfolder, then i will set dir="c:/newfolder".
 
 7.find mean by sunject and activity using the filtered data
 
-8.output data as UIC tidyData.txt
+8.Renames the variables
+
+9.output data as UIC tidyData.txt

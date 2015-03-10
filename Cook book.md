@@ -18,7 +18,7 @@ variable Names:
     
     6 LAYING
 
-3:81
+3 to 81
 
 average.tBodyAcc-mean()-X
 

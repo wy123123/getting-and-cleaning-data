@@ -1,10 +1,10 @@
-The UCI tidyData contains 180 rows and 81 columns
+#The UCI tidyData contains 180 rows and 81 columns
 
-variable Names:
+#variable Names:
 
-1. Subject, indicates the subject id, ranging from 1 to 30 representing a total of 30 test subjects)
+##1. Subject, indicates the subject id, ranging from 1 to 30 representing a total of 30 test subjects)
 
-2. Activity, indcates the activity the subject is taking, there are 6 acvitivities:
+##2. Activity, indcates the activity the subject is taking, there are 6 acvitivities:
 
     1 WALKING
     
@@ -18,7 +18,7 @@ variable Names:
     
     6 LAYING
 
-3. to 81. is the average of all of the mean value for each subject and each activity
+##3. to 81. is the average of all of the mean value for each subject and each activity
 
 average.tBodyAcc-mean()-X
 

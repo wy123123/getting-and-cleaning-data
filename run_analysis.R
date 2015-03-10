@@ -27,11 +27,7 @@ setnames(dt.all,c("Subject","Activity",as.character(dt.feature$V2)))
 dt.all$Activity=dt.activity$V2[match(dt.all$Activity_label,dt.activity$V1)]
 
 #find data of mean and std
-dt_mean=dt.all[,grepl("mea",colnames(dt.all))]
-dt_std=dt.all[,grepl("std",colnames(dt.all))]
-#combine data
-dt_mean_std=data.table(cbind(dt.all$Subject,dt.all$Activity,dt_mean,dt_std))
-setnames(dt_mean_std,1:2,c("Subject","Activity"))
+dt_mean_std=dt.all[,c(1:2,grep("mea",colnames(dt.all)),grep("std",colnames(dt.all)))]
 
 #find average
 dt_avg=dt_mean_std[,lapply(.SD,mean,na.rm=T),by=list(Subject,Activity)]

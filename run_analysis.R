@@ -33,5 +33,5 @@ dt_mean_std=dt.all[,c(1:2,grep("mea",colnames(dt.all)),grep("std",colnames(dt.al
 dt_avg=dt_mean_std[,lapply(.SD,mean,na.rm=T),by=list(Subject,Activity)]
 
 #output file
-write.table(dt_avg,file=paste(dir,"tidy.txt",sep=""),row.names=F)
+write.table(dt_avg,file=paste(dir,"/UCI tidyData.txt",sep=""),row.names=F)
 

@@ -26,11 +26,12 @@ setnames(dt.all,c("Subject","Activity",as.character(dt.feature$V2)))
 # get the activity
 dt.all$Activity=dt.activity$V2[match(dt.all$Activity_label,dt.activity$V1)]
 
-#find data of mean and std
-dt_mean_std=dt.all[,c(1:2,grep("mea",colnames(dt.all)),grep("std",colnames(dt.all)))]
+#find mean and std
+dt_mean_std=data.table(dt.all[,c(1:2,grep("mea",colnames(dt.all)),grep("std",colnames(dt.all)))])
 
-#find average
+#find average and rename variables
 dt_avg=dt_mean_std[,lapply(.SD,mean,na.rm=T),by=list(Subject,Activity)]
+setnames(dt_avg,3:length(colnames(dt_avg)),paste("average.",colnames(dt_avg)[3:length(colnames(dt_avg))],sep=""))
 
 #output file
 write.table(dt_avg,file=paste(dir,"/UCI tidyData.txt",sep=""),row.names=F)

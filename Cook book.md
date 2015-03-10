@@ -18,7 +18,7 @@ variable Names:
     
     6 LAYING
 
-3 to 81
+3. to 81. is the average of all of the mean value for each subject and each activity
 
 average.tBodyAcc-mean()-X
 

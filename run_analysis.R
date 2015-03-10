@@ -1,20 +1,20 @@
 #read train data
 library(data.table)
 #please enter the dir where you extract the zip file
-#e.g, if i extract the zip file to c:/, then dir="c:/UCI HAR Dataset".
-dir="c:/UCI HAR Dataset"
-train.label=read.table(paste(dir,"/train/y_train.txt",sep=""))
-train.x=read.table(paste(dir,"/train/x_train.txt",sep=""))
-subject.train=read.table(paste(dir,"/train/subject_train.txt",sep=""))
+#e.g, if i extract the zip file to c:/newfolder, then dir="c:/newfolder".
+dir="c:/newfolder"
+train.label=read.table(paste(dir,"/UCI HAR Dataset/train/y_train.txt",sep=""))
+train.x=read.table(paste(dir,"/UCI HAR Dataset/train/x_train.txt",sep=""))
+subject.train=read.table(paste(dir,"/UCI HAR Dataset/train/subject_train.txt",sep=""))
 
 #read testing data
-test.label=read.table(paste(dir,"/test/y_test.txt",sep=""))
-test.x=read.table(paste(dir,"/test/x_test.txt",sep=""))
-subject.test=read.table(paste(dir,"/test/subject_test.txt",sep=""))
+test.label=read.table(paste(dir,"/UCI HAR Dataset/test/y_test.txt",sep=""))
+test.x=read.table(paste(dir,"/UCI HAR Dataset/test/x_test.txt",sep=""))
+subject.test=read.table(paste(dir,"/UCI HAR Dataset/test/subject_test.txt",sep=""))
 
 #read feature and activity label
-dt.feature=read.table(paste(dir,"/features.txt",sep=""))
-dt.activity=read.table(paste(dir,"/activity_labels.txt",sep=""))
+dt.feature=read.table(paste(dir,"/UCI HAR Dataset/features.txt",sep=""))
+dt.activity=read.table(paste(dir,"/UCI HAR Dataset/activity_labels.txt",sep=""))
 
 #combine test and training data.
 dt.all=cbind(c(subject.train$V1,subject.test$V1),c(train.label$V1,test.label$V1),rbind(train.x,test.x))

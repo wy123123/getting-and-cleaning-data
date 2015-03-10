@@ -24,7 +24,7 @@ colnames(dt.all)[1:30]
 setnames(dt.all,c("Subject","Activity",as.character(dt.feature$V2)))
 
 # get the activity
-dt.all$Activity=dt.activity$V2[match(dt.all$Activity_label,dt.activity$V1)]
+dt.all$Activity=dt.activity$V2[match(dt.all$Activity,dt.activity$V1)]
 
 #find mean and std
 dt_mean_std=data.table(dt.all[,c(1:2,grep("mea",colnames(dt.all)),grep("std",colnames(dt.all)))])
